@@ -1,0 +1,53 @@
+@startuml
+
+entity aktor {
+    * id
+    --
+    first_name
+    last_name
+    email
+}
+
+entity biodata_aktor {
+    * id_aktor
+    --
+    tempat_lahir
+    tanggal_lahir
+    alamat
+    hobi
+}
+
+entity produser {
+    * id
+    --
+    nama
+    alamat
+}
+
+entity film {
+    * id
+    --
+    judul
+    * id_produser
+}
+
+entity review {
+    * id
+    --
+    comment
+    * id_film
+}
+
+entity aktor_film {
+    * id_aktor
+    --
+    * id_film
+}
+
+aktor ||--|| biodata_aktor
+produser ||--|{ film
+film ||--|{ review
+aktor_film }|--|{ film
+aktor_film }|--|{ aktor
+
+@enduml
