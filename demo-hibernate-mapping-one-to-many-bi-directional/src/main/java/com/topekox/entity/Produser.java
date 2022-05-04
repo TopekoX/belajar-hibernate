@@ -3,6 +3,7 @@ package com.topekox.entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 @Table(name = "produser")
@@ -77,9 +78,9 @@ public class Produser {
     }
 
     public void add(Film film) {
-        if (films == null) {
-            films = new ArrayList<>();
-        }
+
+        films = Optional.ofNullable(films)
+                .orElse(new ArrayList<>());
 
         films.add(film);
         film.setProduser(this);
