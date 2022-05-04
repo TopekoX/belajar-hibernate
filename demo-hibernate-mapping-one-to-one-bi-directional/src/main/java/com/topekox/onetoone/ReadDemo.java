@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import java.util.List;
+import java.util.Optional;
 
 public class ReadDemo {
     public static void main(String[] args) {
@@ -29,8 +30,23 @@ public class ReadDemo {
             }
 
             session.getTransaction().commit();
+
+            session = sessionFactory.getCurrentSession();
+            session.beginTransaction();
+
+            int id = 4;
+            // Menggunakan Optional
+            Optional<BiodataAktor> biodataAktor = Optional.ofNullable(session.get(BiodataAktor.class, id));
+            biodataAktor.ifPresent(value -> {
+                System.out.println("\nBiodata Aktor....");
+                System.out.println("Biodata aktor : " + value + " - " +
+                        value.getAktor());
+            } );
+
+            session.getTransaction().commit();
             System.out.println("\nDONE!!!");
         } finally {
+            session.close();
             sessionFactory.close();
         }
     }
