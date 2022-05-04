@@ -1,6 +1,13 @@
 # Belajar Hibernate
 
-Roadmap List:
+### Tools
+
+* JDK 17
+* MySQL 8.0
+* Hibernate 5.6.8
+* Maven 3.8.5
+
+### Roadmap List
 
 * Hibernate Basic
 * Hibernate One to One
