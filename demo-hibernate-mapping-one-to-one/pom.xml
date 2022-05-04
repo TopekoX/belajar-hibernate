@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.topekox</groupId>
-  <artifactId>demo-hibernate-mapping</artifactId>
+  <artifactId>demo-hibernate-mapping-one-to-one</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <name>demo-hibernate-mapping</name>
