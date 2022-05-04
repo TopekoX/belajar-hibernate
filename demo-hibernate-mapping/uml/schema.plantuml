@@ -3,16 +3,16 @@
 entity aktor {
     * id
     --
-    first_name
-    last_name
+    nama_depan
+    nama_belakang
     email
+    id_biodata_aktor << FK >>
 }
 
 entity biodata_aktor {
-    * id_aktor
+    * id
     --
-    tempat_lahir
-    tanggal_lahir
+    instagram
     alamat
     hobi
 }
@@ -34,7 +34,7 @@ entity film {
 entity review {
     * id
     --
-    comment
+    komentar
     * id_film
 }
 
