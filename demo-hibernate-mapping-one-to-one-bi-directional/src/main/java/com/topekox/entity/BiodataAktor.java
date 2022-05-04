@@ -20,7 +20,12 @@ public class BiodataAktor {
     @Column(name = "hobi")
     private String hobi;
 
-    @OneToOne(mappedBy = "biodataAktor", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "biodataAktor", cascade = {
+            CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.PERSIST,
+            CascadeType.REFRESH
+    })
     private Aktor aktor;
 
     public BiodataAktor() {

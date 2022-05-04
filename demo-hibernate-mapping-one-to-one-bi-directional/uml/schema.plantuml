@@ -21,14 +21,14 @@ entity produser {
     * id
     --
     nama
-    alamat
+    kota
 }
 
 entity film {
     * id
     --
     judul
-    * id_produser
+    * id_produser <<FK>>
 }
 
 entity review {

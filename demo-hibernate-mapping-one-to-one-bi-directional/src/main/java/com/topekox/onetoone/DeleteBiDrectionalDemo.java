@@ -21,10 +21,14 @@ public class DeleteBiDrectionalDemo {
         try {
             session.beginTransaction();
 
-            int id = 3;
+            int id = 4;
 
             Optional<BiodataAktor> biodataAktor = Optional.ofNullable(session.get(BiodataAktor.class, id));
-            biodataAktor.ifPresent(value -> session.delete(value));
+            biodataAktor.ifPresent(value -> {
+                        value.getAktor().setBiodataAktor(null); // set data BiodataAktor dari objek Aktor agar dapat menghapus only BiodataAktor
+                        session.delete(value);
+                    }
+            );
 
             session.getTransaction().commit();
             System.out.println("\nDONE!!!!");
