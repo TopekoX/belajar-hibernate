@@ -20,6 +20,9 @@ public class BiodataAktor {
     @Column(name = "hobi")
     private String hobi;
 
+    @OneToOne(mappedBy = "biodataAktor", cascade = CascadeType.ALL)
+    private Aktor aktor;
+
     public BiodataAktor() {
     }
 
@@ -27,6 +30,14 @@ public class BiodataAktor {
         this.tempatLahir = tempatLahir;
         this.instagram = instagram;
         this.hobi = hobi;
+    }
+
+    public Aktor getAktor() {
+        return aktor;
+    }
+
+    public void setAktor(Aktor aktor) {
+        this.aktor = aktor;
     }
 
     public int getId() {
