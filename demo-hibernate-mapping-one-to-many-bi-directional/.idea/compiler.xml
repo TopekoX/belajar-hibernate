@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="demo-hibernate-mapping-one-to-many-bi-directional" />
         <module name="demo-hibernate-mapping" />
         <module name="demo-hibernate-mapping-one-to-one-bi-directional" />
       </profile>
